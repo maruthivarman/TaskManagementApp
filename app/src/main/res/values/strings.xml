@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">TaskManagement</string>
+    <string name="no_data">No Data</string>
+    <string name="title">Title</string>
+    <string name="date">Set date</string>
+    <string name="time">Set time</string>
+    <string name="description">Description</string>
+    <string name="sort_by">Sort By</string>
+    <string name="search">Search</string>
+    <string name="status_todo">ToDo</string>
+    <string name="status_in_progress">In Progress</string>
+    <string name="status_done">Done</string>
+    <string name="delete_all">Delete All</string>
+    <string name="add">Add</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+
+    <string-array name="status">
+        <item>ToDo</item>
+        <item>In Progress</item>
+        <item>Done</item>
+    </string-array>
+</resources>

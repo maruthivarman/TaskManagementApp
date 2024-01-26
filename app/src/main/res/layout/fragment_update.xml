@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="args"
+            type="com.pesto.taskmanagement.fragments.update.UpdateFragmentArgs" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="24dp"
+        tools:context=".fragments.update.UpdateFragment">
+
+
+        <EditText
+            android:id="@+id/current_title_et"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:text="@{args.currentItem.title}"
+            android:ems="10"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:background="@drawable/custom_input"
+            android:inputType="textPersonName"
+            android:hint="@string/title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/current_status_spinner"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:entries="@array/status"
+            android:parseStatusToInt="@{args.currentItem.status}"
+            android:background="@drawable/custom_input"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/current_title_et" />
+
+        <EditText
+            android:id="@+id/current_date_et"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:ems="10"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:text="@{args.currentItem.date}"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/custom_input"
+            android:inputType="date"
+            android:hint="@string/date"
+            android:clickable="true"
+            android:focusable="false"
+            android:cursorVisible="false"
+            android:drawableEnd="@drawable/ic_date_range_black_24dp"
+            android:drawableTint="@color/primary_variant"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/current_status_spinner" />
+
+        <EditText
+            android:id="@+id/current_time_et"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:ems="10"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:text="@{args.currentItem.time}"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/custom_input"
+            android:inputType="date"
+            android:hint="@string/time"
+            android:clickable="true"
+            android:focusable="false"
+            android:cursorVisible="false"
+            android:visibility="gone"
+            android:drawableEnd="@drawable/ic_access_time_black_24dp"
+            android:drawableTint="@color/primary_variant"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/current_date_et" />
+
+        <EditText
+            android:id="@+id/current_description_et"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:ems="10"
+            android:text="@{args.currentItem.description}"
+            android:layout_marginTop="8dp"
+            android:paddingStart="24dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="24dp"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            android:background="@drawable/custom_input"
+            android:hint="@string/description"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/current_time_et" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
